@@ -72,10 +72,12 @@
     "dependencies": {
         "@tailwindcss/custom-forms": "^0.2.1",
         "axios": "^0.21.1",
+        "bootstrap": "^4.6.0",
         "classnames": "^2.2.5",
         "emotion": "^9.2.12",
         "lodash-es": "^4.17.15",
         "react": "^16.14.0",
+        "react-bootstrap": "^1.4.3",
         "react-dom": "^16.14.0",
         "react-router": "^4.2.0",
         "react-router-dom": "^4.3.1"
