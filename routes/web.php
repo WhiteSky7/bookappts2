@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,17 +12,19 @@
 |
 */
 
-Route::get('/book', 'App\Http\Controllers\BookController@index');
-Route::get('/book/index', 'App\Http\Controllers\BookController@index');
-Route::get('/book/list', 'App\Http\Controllers\BookController@index');
-Route::get('/book/form', 'App\Http\Controllers\BookController@index');
-Route::get('/book/edit/{num}', 'App\Http\Controllers\BookController@index');
+Route::get('/books', 'BookController@index');
+Route::get('/books/{id}', 'BookController@show');
+Route::post('/books', 'BookController@store');
+Route::post('/books/{id}/answers', 'BookController@answer');
+Route::delete('/books/{id}', 'BookController@delete');
+Route::delete('/books/{id}/answers', 'BookController@resetAnswers');
 
-Route::get('/lib', 'App\Http\Controllers\LibController@index');
-Route::get('/lib/index', 'App\Http\Controllers\LibController@index');
-Route::get('/lib/list', 'App\Http\Controllers\LibController@index');
-Route::get('/lib/form', 'App\Http\Controllers\LibController@index');
-Route::get('/lib/edit/{num}', 'App\Http\Controllers\LibController@index');
+Route::get('/libs', 'libController@index');
+Route::get('/libs/{id}', 'libController@show');
+Route::post('/libs', 'libController@store');
+Route::post('/libs/{id}/answers', 'libController@answer');
+Route::delete('/libs/{id}', 'libController@delete');
+Route::delete('/libs/{id}/answers', 'libController@resetAnswers');
 
 
 
