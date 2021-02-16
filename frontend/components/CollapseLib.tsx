@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {Button, Collapse} from 'react-bootstrap';
+import Lib from './Lib/index';
 
 const CollapseLib = () => {
     const [open, setOpen] = useState(false);
-  
+
     return (
       <>
         <Button
@@ -16,7 +17,7 @@ const CollapseLib = () => {
         <Collapse in={open}>
           <div>
             <blockquote></blockquote>
-            <Button onClick={() => prompt('hello world')}>dfsd</Button>
+                <Lib></Lib>
           </div>
         </Collapse>
       </>
