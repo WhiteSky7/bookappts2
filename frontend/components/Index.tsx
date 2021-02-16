@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "contexts/UserContext"
 import { notification } from "antd";
 import { css } from "emotion";
+import {Button, Container, Col, Row} from "react-bootstrap";
+import CollapseBook from './CollapseBook';
+import CollapseLib from './CollapseLib';
 
 const openNotificationWithIcon = type => {
     notification[type]({
@@ -13,23 +16,29 @@ interface IProps {
 
 }
 
-export const : React.FC<IProps> = () => {
-    const [user, setUser] = useContext<any>(UserContext)
-
-    useEffect(() => {
-        openNotificationWithIcon("info");
-    }, [])
+export const Index: React.FC<IProps> = () => {
 
     return (
-        <div className={css(`padding: 12rem`)}>
-            <h1>bookappts2 - Library mini app</h1>
+        
+        <Container>
+                    <Row>
+                        <Col>
+        <h1>Laravel React Typescript BookApp</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <CollapseBook/>
+                        </Col>
+                    </Row>
+                    <blockquote></blockquote>
+                    <Row>
+                        <Col>
+                            <CollapseLib/>
+                        </Col>
+                    </Row>
+                </Container>
 
-            <div className={"bg-blue-600 text-white p-4 mt-4"}>
-                <p>
-                    If you are seeing this then you have successfully
-                    installed the boilerplate.
-                </p>
-            </div>
-        </div >
+            
     );
 }
