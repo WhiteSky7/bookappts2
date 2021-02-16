@@ -6,6 +6,8 @@ import {Button, Container, Col, Row} from "react-bootstrap";
 import CollapseBook from './CollapseBook';
 import CollapseLib from './CollapseLib';
 
+import { API_BASE_URL } from '../config';
+
 const openNotificationWithIcon = type => {
     notification[type]({
         message: "Ant Design is working"
@@ -19,7 +21,7 @@ interface IProps {
 export const Index: React.FC<IProps> = () => {
 
     return (
-        
+
         <Container>
                     <Row>
                         <Col>
@@ -39,6 +41,6 @@ export const Index: React.FC<IProps> = () => {
                     </Row>
                 </Container>
 
-            
+
     );
 }
