@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {Button, Collapse} from 'react-bootstrap';
+import Book from './Book/index';
 
 const CollapseBook = () => {
     const [open, setOpen] = useState(false);
-  
+
     return (
       <>
         <Button
@@ -14,11 +15,7 @@ const CollapseBook = () => {
           Книги
         </Button>
         <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
+          <Book></Book>
         </Collapse>
       </>
     );
