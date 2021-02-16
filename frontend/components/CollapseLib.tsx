@@ -11,7 +11,7 @@ const CollapseLib = () => {
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          click
+          Библиотеки
         </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
