@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/books', 'BookController@index');
+Route::get('/books/{id}', 'BookController@show');
+Route::post('/books', 'BookController@store');
+Route::post('/books/{id}/answers', 'BookController@answer');
+Route::delete('/books/{id}', 'BookController@delete');
+Route::delete('/books/{id}/answers', 'BookController@resetAnswers');
+
+Route::get('/libs', 'LibController@index');
+Route::get('/libs/{id}', 'LibController@show');
+Route::post('/libs', 'LibController@store');
+Route::post('/libs/{id}/answers', 'LibController@answer');
+Route::delete('/libs/{id}', 'LibController@delete');
+Route::delete('/libs/{id}/answers', 'LibController@resetAnswers');
+
+
+
