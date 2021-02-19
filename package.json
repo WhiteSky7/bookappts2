@@ -70,6 +70,7 @@
         "webpack-hot-middleware": "^2.25.0"
     },
     "dependencies": {
+        "@okta/okta-react": "1.1.4",
         "@tailwindcss/custom-forms": "^0.2.1",
         "axios": "^0.21.1",
         "bootstrap": "^4.6.0",
@@ -80,6 +81,7 @@
         "react-bootstrap": "^1.4.3",
         "react-dom": "^16.14.0",
         "react-router": "^4.2.0",
-        "react-router-dom": "^4.3.1"
+        "react-router-dom": "4.3.1",
+        "semantic-ui-react": "0.83.0"
     }
 }

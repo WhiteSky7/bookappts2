@@ -21,7 +21,8 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|max:255'
+            'name' => 'required|max:255',
+            'lib_id' => 'required|max: 100'
         ]);
         $book = Book::create($request->all());
 
@@ -29,21 +30,18 @@ class BookController extends Controller
                 ->response()
                 ->setStatusCode(201);
     }
-    public function answer($id, Request $request)
+    public function update($id, Request $request)
     {
-        $request->merge(['correct' => (bool) json_decode($request->get('Верно'))]);
+
         $request->validate([
-            'Верно' => 'required|boolean'
-        ]);
+                'name' => 'required|max:255',
+                'lib_id' => 'required|max: 100'
+            ]);
 
-        $book = Book::findOrFail($id);
-        $book->answers++;
-        $book->points = ($request->get('Верно')
-                                        ? $book->points + 1
-                                        : $book->points - 1);
-        $book->save();
+            
 
-        return new BookResource($book);
+        return (new BookResource($book));
+
     }
     public function delete($id)
     {

@@ -17,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/books', 'BookController@index');
 Route::get('/books/{id}', 'BookController@show');
-Route::post('/books', 'BookController@store');
-Route::post('/books/{id}/answers', 'BookController@answer');
+Route::post('/books', 'BookController@store' );
+Route::put('/books/{id}', 'BookController@update');
 Route::delete('/books/{id}', 'BookController@delete');
-Route::delete('/books/{id}/answers', 'BookController@resetAnswers');
 
 Route::get('/libs', 'LibController@index');
 Route::get('/libs/{id}', 'LibController@show');
