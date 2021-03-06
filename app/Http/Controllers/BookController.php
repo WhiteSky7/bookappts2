@@ -27,21 +27,24 @@ class BookController extends Controller
         $book = Book::create($request->all());
 
         return (new BookResource($book))
-                ->response()
-                ->setStatusCode(201);
+        ->response()
+        ->setStatusCode(201);
     }
-    public function update($id, Request $request)
+    public function update(Request $request, $id)
     {
-
         $request->validate([
-                'name' => 'required|max:255',
-                'lib_id' => 'required|max: 100'
+            'name' => 'required|max:255',
+            'lib_id' => 'required|max: 100'
             ]);
 
-            
+            $book = Book::find($id);
+            $book->lib_id = $request->get('lib_id');
+            $book->name = $request->get('name');
+            $book->save();
 
-        return (new BookResource($book));
-
+        return (new BookResource($book))
+        ->response()
+        ->setStatusCode(202);
     }
     public function delete($id)
     {
@@ -50,12 +53,5 @@ class BookController extends Controller
 
         return response()->json(null, 204);
     }
-    public function resetAnswers($id)
-    {
-        $book = Book::findOrFail($id);
-        $book->answers = 0;
-        $book->points = 0;
 
-        return new BookResource($book);
-    }
 }

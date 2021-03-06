@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-Route::view('/{all?}', 'app')
-    ->where(['all' => '.*']);
+Route::put('/books/{id}/update', 'BookController@update');
+Route::view('/', 'master');
+  //  ->where(['all' => '.*']);
